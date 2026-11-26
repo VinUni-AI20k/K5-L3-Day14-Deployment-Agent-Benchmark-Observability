@@ -89,8 +89,11 @@ redis     Up 36 seconds (healthy)   6379/tcp
 
 ## Part 3: Cloud Deployment
 
-### Trạng thái deploy
-**Chưa deploy lên cloud, chưa có URL public.** Xem [DEPLOYMENT.md](DEPLOYMENT.md).
+### Exercise 3.1: Deploy Railway
+- **URL public:** https://agent-production-f5fff8e6.up.railway.app
+- Deploy agent Part 6 cùng Redis của Railway; biến môi trường đặt trên Railway.
+- Kết quả: `/health` 200, `/ready` 200, `/ask` không key 401, có key 200, vượt giới hạn 429.
+- Chi tiết và ảnh: [DEPLOYMENT.md](DEPLOYMENT.md), [screenshots/test.png](screenshots/test.png).
 
 ### So sánh `railway.toml` và `render.yaml`
 
@@ -301,7 +304,7 @@ Bài này được làm **chủ yếu bằng trợ lý AI**, theo yêu cầu "l�
 |---|---|---|
 | Codex | Phiên đầu tiên (không có log chi tiết) | Bắt đầu làm bài, để dở |
 | Antigravity CLI | "Tiếp tục làm những gì Codex làm dở" | Kiểm tra Part 6, chạy load test và eval, thêm 2 mục vào `KNOWLEDGE_BASE`, sửa Dockerfile của stack observability, viết nháp tài liệu |
-| Claude Code | "Làm tiếp và làm hết" | Sửa `render.yaml`, thêm metric `agent_question_length_chars`, chạy thí nghiệm A–E, đo lại scaling, chụp ảnh, chạy lại script chấm và bài tập Part 1, 2, 4, 5, viết lại ba file báo cáo, commit và push |
+| Claude Code | "Làm tiếp và làm hết" | Sửa `render.yaml`, thêm metric `agent_question_length_chars`, chạy thí nghiệm A–E, đo lại scaling, chụp ảnh, deploy lên Railway (người học đăng nhập và cấp quyền cho CLI), chạy lại script chấm và bài tập Part 1, 2, 4, 5, viết lại ba file báo cáo, commit và push |
 
 **Cách kiểm tra:** output lấy từ lệnh chạy thật; số liệu đối chiếu với JSON, CSV và dữ liệu Prometheus; code Part 6 kiểm bằng script chấm.
 
