@@ -47,4 +47,4 @@ Ghi chú: Railway CLI cảnh báo cấu hình bằng `railway.toml` sắp bị t
 ## Screenshots
 - [Service running](screenshots/running.png): trang `/docs` mở từ URL public
 - [Test results](screenshots/test.png): dựng từ output thật của 4 lệnh curl
-- `screenshots/dashboard.png`: **chưa có**, cần chụp trang dashboard Railway (phải đăng nhập web)
+- [Deployment status](screenshots/dashboard.png): dựng từ output `railway service list`, không phải ảnh chụp trang dashboard web
